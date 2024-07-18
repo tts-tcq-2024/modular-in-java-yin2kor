@@ -1,12 +1,10 @@
 package colorcoder;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class MajorColor extends Color {
     private static final HashMap<MajorColors, Color> sColors =
-            new HashMap<>() {{
+            new LinkedHashMap<>() {{
                 put(MajorColors.WHITE, new MajorColor(0, "White"));
                 put(MajorColors.BLACK, new MajorColor(1, "Black"));
                 put(MajorColors.YELLOW, new MajorColor(2, "Yellow"));
@@ -29,7 +27,7 @@ public class MajorColor extends Color {
     }
 
     public static List<Color> getColors() {
-        return sColors.values().stream().toList();
+        return new ArrayList<>(sColors.values());
     }
 
 }

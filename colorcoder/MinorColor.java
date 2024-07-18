@@ -1,14 +1,12 @@
 package colorcoder;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class MinorColor extends Color {
 
 
     private static final HashMap<MinorColors, Color> sColors =
-            new HashMap<>() {{
+            new LinkedHashMap<>() {{
                 put(MinorColors.BLUE, new MinorColor(0, "Blue"));
                 put(MinorColors.ORANGE, new MinorColor(1, "Orange"));
                 put(MinorColors.GREEN, new MinorColor(2, "Green"));
@@ -34,6 +32,6 @@ public class MinorColor extends Color {
     }
 
     public static List<Color> getColors() {
-        return sColors.values().stream().toList();
+        return new ArrayList<>(sColors.values());
     }
 }
