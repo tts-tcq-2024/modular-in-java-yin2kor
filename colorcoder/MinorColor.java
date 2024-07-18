@@ -6,7 +6,7 @@ public class MinorColor extends Color {
 
 
     private static final HashMap<MinorColors, Color> sColors =
-            new LinkedHashMap<>() {{
+            new LinkedHashMap<MinorColors, Color>() {{
                 put(MinorColors.BLUE, new MinorColor(0, "Blue"));
                 put(MinorColors.ORANGE, new MinorColor(1, "Orange"));
                 put(MinorColors.GREEN, new MinorColor(2, "Green"));

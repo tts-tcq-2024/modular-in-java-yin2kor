@@ -4,7 +4,7 @@ import java.util.*;
 
 public class MajorColor extends Color {
     private static final HashMap<MajorColors, Color> sColors =
-            new LinkedHashMap<>() {{
+            new LinkedHashMap<MajorColors, Color>() {{
                 put(MajorColors.WHITE, new MajorColor(0, "White"));
                 put(MajorColors.BLACK, new MajorColor(1, "Black"));
                 put(MajorColors.YELLOW, new MajorColor(2, "Yellow"));
