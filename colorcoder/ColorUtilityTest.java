@@ -23,7 +23,7 @@ public class ColorUtilityTest {
         assert (pairNumber == expectedPairNumber);
     }
 
-    static void runColorUtilityTests()
+    public static void runColorUtilityTests()
     {
         testNumberToPair(4, MajorColor.getColor(MajorColor.MajorColors.WHITE), MinorColor.getColor(MinorColor.MinorColors.BROWN));
         testNumberToPair(5, MajorColor.getColor(MajorColor.MajorColors.WHITE), MinorColor.getColor(MinorColor.MinorColors.SLATE));
