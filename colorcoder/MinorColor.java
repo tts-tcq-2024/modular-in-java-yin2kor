@@ -1,37 +1,39 @@
 package colorcoder;
 
-public enum MinorColor implements IColor{
-    BLUE(0, "Blue"),
-    ORANGE(1, "Orange"),
-    GREEN(2, "Green"),
-    BROWN(3, "Brown"),
-    SLATE(4, "Slate");
-    private final int index;
-    private final String color;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
-    MinorColor(int index, String color) {
-        this.index = index;
-        this.color = color;
+public class MinorColor extends Color {
+
+
+    private static final HashMap<MinorColors, Color> sColors =
+            new HashMap<>() {{
+                put(MinorColors.BLUE, new MinorColor(0, "Blue"));
+                put(MinorColors.ORANGE, new MinorColor(1, "Orange"));
+                put(MinorColors.GREEN, new MinorColor(2, "Green"));
+                put(MinorColors.BROWN, new MinorColor(3, "Brown"));
+                put(MinorColors.SLATE, new MinorColor(4, "Slate"));
+            }};
+
+    public enum MinorColors {
+        BLUE,
+        ORANGE,
+        GREEN,
+        BROWN,
+        SLATE
     }
 
-    @Override
-    public int getIndex() {
-        return index;
+    private MinorColor(int index, String color) {
+        super(index, color);
     }
 
-    @Override
-    public String getString() {
-        return color;
+
+    public static MinorColor getColor(MinorColors minorColors) {
+        return (MinorColor) sColors.get(minorColors);
     }
 
-    public static MinorColor getColorFromIndex(int index) {
-        MinorColor selectedColor = null;
-        for (MinorColor color : MinorColor.values()) {
-            if (color.getIndex() == index) {
-                selectedColor = color;
-                break;
-            }
-        }
-        return selectedColor;
+    public static List<Color> getColors() {
+        return sColors.values().stream().toList();
     }
 }
