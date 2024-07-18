@@ -6,13 +6,15 @@ public class MajorColor extends Color {
     private static final HashMap<MajorColors, Color> sColors =
             new LinkedHashMap<MajorColors, Color>() {{
                 put(MajorColors.WHITE, new MajorColor(0, "White"));
-                put(MajorColors.BLACK, new MajorColor(1, "Black"));
-                put(MajorColors.YELLOW, new MajorColor(2, "Yellow"));
-                put(MajorColors.VIOLET, new MajorColor(3, "Violet"));
+                put(MajorColors.RED, new MajorColor(1, "Red"));
+                put(MajorColors.BLACK, new MajorColor(2, "Black"));
+                put(MajorColors.YELLOW, new MajorColor(3, "Yellow"));
+                put(MajorColors.VIOLET, new MajorColor(4, "Violet"));
             }};
 
     public enum MajorColors {
         WHITE,
+        RED,
         BLACK,
         YELLOW,
         VIOLET
